@@ -1,3 +1,60 @@
-body{
-    background: green;
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    // width: 90vw;
+}
+
+.mx-center{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#planAirplane{
+    margin-top: 100px;
+    display: flex;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    position: relative;
+    z-index: 1;
+
+    #imgAirplane{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    #mapAirplane{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        .position{
+            opacity: .6;
+            height: 21px;
+            width: 23.5px;
+            &:hover{
+                cursor: pointer;
+                opacity: .8;
+            }
+            &__reservation{
+                fill: red;
+            }
+    
+            &__available{
+                fill: green;
+                &.active{
+                    fill: #0014ff;
+                }
+            }
+        }
+    }
 }

@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="build/main.css">
 </head>
 <body>
-    hello
-    <script src="./js/main.js"></script>
+    <main class="container mx-center">
+        <picture id="planAirplane">
+         <img src="images/Boeing_737-map.jpg" id="imgAirplane" alt="Map Boeing 737">
+         <svg id="mapAirplane">
+         </svg>
+        </picture>
+    </main>
+<script src="./js/main.js"></script>
 </body>
 </html>

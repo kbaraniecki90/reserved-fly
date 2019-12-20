@@ -1,0 +1,146 @@
+[
+    {
+        "name": "B21",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.215,
+            "y": 0.6275
+        }
+    },
+    {
+        "name": "B22",
+        "status": 1,
+        "price": "28,21",
+        "location": {
+            "x": 0.215,
+            "y": 0.523
+        }
+    },
+    {
+        "name": "B23",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.215,
+            "y": 0.4175
+        }
+    },
+    {
+        "name": "B24",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.215,
+            "y": 0.3130
+        }
+    },
+    {
+        "name": "B31",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.2335,
+            "y": 0.6275
+        }
+    },
+    {
+        "name": "B32",
+        "status": 1,
+        "price": "28,21",
+        "location": {
+            "x": 0.2335,
+            "y": 0.523
+        }
+    },
+    {
+        "name": "B33",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.2335,
+            "y": 0.4175
+        }
+    },
+    {
+        "name": "B34",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.2335,
+            "y": 0.3130
+        }
+    },
+    {
+        "name": "B41",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.2521,
+            "y": 0.6275
+        }
+    },
+    {
+        "name": "B42",
+        "status": 1,
+        "price": "28,21",
+        "location": {
+            "x": 0.2521,
+            "y": 0.523
+        }
+    },
+    {
+        "name": "B43",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.2521,
+            "y": 0.4175
+        }
+    },
+    {
+        "name": "B44",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.2521,
+            "y": 0.3130
+        }
+    },
+    {
+        "name": "B51",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.2695,
+            "y": 0.6275
+        }
+    },
+    {
+        "name": "B52",
+        "status": 1,
+        "price": "28,21",
+        "location": {
+            "x": 0.2695,
+            "y": 0.523
+        }
+    },
+    {
+        "name": "B53",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.2695,
+            "y": 0.4175
+        }
+    },
+    {
+        "name": "B54",
+        "status": 0,
+        "price": "28,21",
+        "location": {
+            "x": 0.2695,
+            "y": 0.3130
+        }
+    }
+]
