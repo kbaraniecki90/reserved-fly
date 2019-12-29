@@ -42,9 +42,9 @@
                             <p>Sum: <strong><span id="sum">0</span> EUR</strong></p>
                         </div>
                     </form>
-                        <div class="text-right">
-                            <input type="submit" value="Book a flight">
-                        </div>
+                    <div class="text-right">
+                        <input type="submit" value="Book a flight">
+                    </div>
 
                 </div>
             </aside>
