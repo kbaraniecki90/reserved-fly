@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap&subset=latin-ext');
+
+html{
+    font-size: 10px;
+}
+p,h1,h2,h3,h4,h5,h6{
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.2;
+    margin: 0;
+}
+
+h1, .h1{
+    font-size: 2.6rem;
+    margin-bottom: 1.4rem;
+}
+
+h2, .h2{
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+p, .p{
+    font-size: 1.6rem;
+    margin-bottom: .4rem;
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+
+// Other
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+
+// Material icons
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+.material-icons {
+    display: inline-flex;
+    vertical-align: bottom;
+}

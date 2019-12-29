@@ -1,0 +1,13 @@
+.p-relative{
+    position: relative;
+}
+
+.rm-element{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.h-100{
+    height: 100%;
+}
