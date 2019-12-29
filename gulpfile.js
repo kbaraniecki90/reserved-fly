@@ -41,7 +41,7 @@ gulp.task('browser-sync', () => {
 gulp.task('webpack', () => {
     gulp.src('./src/js/main.js')
       .pipe(webpackStream(webpackConfig), webpack)
-      .pipe(gulp.dest('./dist/js'));
+      .pipe(gulp.dest('./dist/js'))
 });
 
 gulp.task('default', gulp.parallel(

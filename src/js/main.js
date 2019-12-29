@@ -14,7 +14,7 @@ function sizeMapAirplane() {
 }
 sizeMapAirplane()
 
-fetch('./data/sites-boeing-737.json')
+fetch('./src/data/sites-boeing-737.json')
 .then(function (res){
     return res.json();
 })
@@ -51,7 +51,7 @@ function getAllPositions() {
 
 function addPositionForForm(element) {
     var position = element.getAttribute("id")
-    dataPosition = getDataPosition(position)
+    var dataPosition = getDataPosition(position)
 
     var formSummary = document.querySelector('#mainFormSummary .form-body')
 

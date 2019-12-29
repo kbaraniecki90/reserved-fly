@@ -53,6 +53,6 @@
     <footer id="footer">
         <h3 class="h1">Project author - Krzysztof Baraniecki</h3>
     </footer>
-    <script src="./dist/js/build.min.js"></script>
+    <script src="./dist/js/main.min.js"></script>
 </body>
 </html>
