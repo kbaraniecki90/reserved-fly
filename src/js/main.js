@@ -1,5 +1,6 @@
-import moveBox from './modules/moveBox'
-import appReservedFly from './modules/appReservedFly'
+import moveBox from './modules/_moveBox'
+import appReservedFly from './modules/_appReservedFly'
+import login from './modules/_login'
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ### Run modules ###
     moveBox()
     appReservedFly()
+    login()
 
     // #### Micro functions ####
     window.toNumbersPrice = function (price) {

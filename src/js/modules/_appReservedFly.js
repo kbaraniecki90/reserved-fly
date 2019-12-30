@@ -77,7 +77,7 @@ export default function () {
     }
 
     document.addEventListener('input', function (event) {
-        if(event.target.id == "groupOfPassengers-select"){
+        if(event.target.name == "groupOfPassengers"){
             sumPrice()
         }
     })

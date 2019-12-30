@@ -1,0 +1,28 @@
+#login{
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+}
+#formLogin{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background: white;
+    padding: 30px;
+    text-align: center;
+    box-shadow: -3px 7px 17px 1px rgba(black, .62);
+}
+
+.coverSitpage{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+    background: white;
+    opacity: .6;
+}

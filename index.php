@@ -53,6 +53,26 @@
     <footer id="footer">
         <h3 class="h1">Project author - Krzysztof Baraniecki</h3>
     </footer>
+    <aside id="login">
+        <div class="coverSitpage"></div>
+        <div id="formLogin">
+            <h3 class="h1"><span class="logo material-icons">flight</span>Book a flight</h3>
+            <div class="messageError"></div>
+            <form>
+                <p>
+                    <label>Email</label><br>
+                    <input type="email" name="email" required>
+                </p>
+                <p>
+                    <label>Password</label><br>
+                    <input type="password" name="password" required>
+                </p>
+                <p>
+                    <button>Login</button>
+                </p>
+            </form>
+        </div>
+    </aside>
     <script src="./dist/js/main.min.js"></script>
 </body>
 </html>
