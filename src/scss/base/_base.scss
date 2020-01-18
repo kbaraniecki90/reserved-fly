@@ -3,6 +3,7 @@
 }
 
 .rm-element{
+    
     &:hover{
         cursor: pointer;
     }
@@ -23,11 +24,24 @@
 }
 
 .d-none{
-    display: none;
+    display: none !important;
 }
 
 .logo{
     font-size: 4rem;
     margin-right: 2rem;
     color: #000091;
+}
+
+#backSection{
+    display: inline-block;
+    background: rgba($primary, 0.2);
+    padding: 1rem;
+    border-radius: 50%;
+    color: white;
+    transition: .4s color ease-in-out;
+    &:hover{
+        cursor: pointer;
+        color: #000091;
+    }
 }

@@ -11,18 +11,18 @@
     margin-right: 15px;
     margin-left: 15px;
 
-    #imgAirplane{
+    #imgAirplane, #mapAirplane{
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
+        margin: auto;
     }
 
+    // #imgAirplane{
+    // }
+
     #mapAirplane{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
         z-index: 2;
     }
 
@@ -99,9 +99,9 @@
         display: block;
         position: absolute;
         height: 100%;
-        width: 50px;
+        width: 35px;
         border-radius: 50%;
-        background: yellow;
+        background: white;
         box-shadow: -12px 0px 20px -13px black;
     }
 

@@ -23,6 +23,17 @@
 }
 
 .col-3{
+    width: 100%;
     flex: 0 0 25%;
     max-width: 25%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-12{
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
 }

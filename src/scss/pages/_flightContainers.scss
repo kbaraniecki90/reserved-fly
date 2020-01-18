@@ -1,0 +1,14 @@
+.box-flight{
+    text-align: center;
+    &__body{
+        background: rgba($primary, 0.75);
+        color: white;
+        margin-bottom: 3rem;
+        padding: 4rem 2rem;
+        transition: .6s all ease-in-out;
+        &:hover{
+            background: rgba($primary, 1);
+            cursor: pointer;
+        }
+    }
+}
