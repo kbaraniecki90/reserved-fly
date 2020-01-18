@@ -9,51 +9,26 @@
 </head>
 <body>
     <header id="header">
-    <h1 class="text-uppercase"><span class="logo material-icons">flight</span>Book a flight - Boeing 737</h1>
+    <h1 class="text-uppercase"><span class="logo material-icons">flight</span>Book a flight</h1>
+    <div id="account"> <p>Hello, <span id="account-user">Krzystof Baraniecki</span>. <a href="#!" id="btnLogout">logout out</a></p></div>
     </header>
     <main class="container-fluid">
-        <div class="row">
-            <div class="p-relative col">
-                <picture class="h-100" id="planAirplane">
-                    <img src="images/Boeing_737-map.jpg" id="imgAirplane" alt="Map Boeing 737">
-                    <svg id="mapAirplane"></svg>
-                </picture>
-                <div class="move move--left material-icons" data-moveTarget="planAirplane" data-moveDirection="left">chevron_left</div>
-                <div class="move move--right material-icons" data-moveTarget="planAirplane" data-moveDirection="right">chevron_left</div>
+        <div id="flightContainers" class="row">
+            <div class="col-12">
+                <h2>Wybór lotu</h2>
             </div>
-            <aside class="col-3" id="bookingCost">
-                <div class="bookingCost__content">
-                    <header class="text-center">
-                        <h2 class="h1">Flight number: KB1903</h1>
-                        <h3 class="h2">MX <span class="material-icons">redo</span> NZ</h2>
-                        <p>Flight time: 14h 32min</p>
-                        <p><span class="material-icons">flight_takeoff</span>Outlet:  20.12.2019 20:30<br>
-                            <span class="material-icons">flight_land</span>Arrival: 21.12.2019 11:02</p>
-                    </header>
-                    <hr>
-                    <form id="mainFormSummary" action="" method="get" class="">
-                        <div class="form-head">
-                            <h2>Selected places:</h2>
-                        </div>
-                        <div class="form-body">
-                        </div>
-
-                        <div class="form-footer">
-                            <p>Sum: <strong><span id="sum">0</span> EUR</strong></p>
-                        </div>
-                    </form>
-                    <div class="text-right">
-                        <input type="submit" value="Book a flight">
-                    </div>
-
-                </div>
-            </aside>
+        </div>
+        <div id="viewAirplaneReservation" class="d-none">
+            <div id="backSection"><i class="material-icons">arrow_back</i></div>
+            <div class="row" id="selectedFlight">
+            </div>
         </div>
     </main>
     <footer id="footer">
         <h3 class="h1">Project author - Krzysztof Baraniecki</h3>
     </footer>
-    <aside id="login">
+    <!-- d-noen -->
+    <aside id="login" class="d-none"> 
         <div class="coverSitpage"></div>
         <div id="formLogin">
             <h3 class="h1"><span class="logo material-icons">flight</span>Book a flight</h3>
@@ -76,3 +51,18 @@
     <script src="./dist/js/main.min.js"></script>
 </body>
 </html>
+
+<!-- 
+In progres
+1. Logowaniem 
+
+2. Wyborem daty/miejsca docelowego/liczby osób 
+
+4. Wybór opcji dodatkowych (bagaż, taryfa) 
+
+5.Podsumowanie zamówienia  
+
+End
+3. Wybór miejsca w samolocie 
+
+-->
