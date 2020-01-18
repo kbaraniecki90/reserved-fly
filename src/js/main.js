@@ -1,26 +1,37 @@
-import moveBox from './modules/_moveBox'
-import appReservedFly from './modules/_appReservedFly'
 import login from './modules/_login'
+import flightSelection from './modules/_flightSelection'
+import appReservedFly from './modules/_appReservedFly'
 
+// #### Micro functions ####
+window.toNumbersPrice = function (price) {
+    return Number((parseFloat(price).toFixed(2)))
+}
+
+window.discount = function (price, discount) {
+    return price * discount
+}
+
+window.numberWithSpaces = function (x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+window.blockWindow = function () {
+    document.querySelector('body').classList.add('modal-open', 'modal-blur')
+}
+
+window.rmBlockWindow = function () {
+    document.querySelector('body').classList.remove('modal-open', 'modal-blur')
+}
+
+window.switchSection = function (present, next) {
+    document.getElementById(present).classList.toggle('d-none')
+    document.getElementById(next).classList.toggle('d-none')
+}
 
 document.addEventListener('DOMContentLoaded', function () {
-
     // ### Run modules ###
-    moveBox()
-    appReservedFly()
-    login()
+    // login()
+    // blockWindow()
 
-    // #### Micro functions ####
-    window.toNumbersPrice = function (price) {
-        return Number((parseFloat(price).toFixed(2)))
-    }
-
-    window.discount = function (price, discount) {
-        return price * discount
-    }
-
-    window.numberWithSpaces = function (x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    }
-
+    flightSelection()
 })

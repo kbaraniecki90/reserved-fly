@@ -1,4 +1,4 @@
-export default function () {
+export default function (flight) {
 
     var mapAirplane = document.getElementById('mapAirplane'),
         imgAirplane = document.getElementById('imgAirplane'),
@@ -12,7 +12,7 @@ export default function () {
     }
     sizeMapAirplane()
 
-    fetch('./src/data/sites-boeing-737.json')
+    fetch('./src/data/sites-' + flight + '.json')
         .then(function (res){
         return res.json();
     })

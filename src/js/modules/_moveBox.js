@@ -1,5 +1,4 @@
 export default function () {
-
     var trafficDirections = document.querySelectorAll('.move[data-movetarget]')
     var animateMove
     var optionsMove = {
