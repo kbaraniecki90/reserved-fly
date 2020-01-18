@@ -1,0 +1,23 @@
+[
+    {
+        "user" : "90Kowalski",
+        "password" : "12345",
+        "email": "kowalski@gmail.com",
+        "firstName": "Adam",
+        "lastName": "Kowlaski"
+    },
+    {
+        "user" : "kbaraniecki",
+        "password" : "54321",
+        "email": "kbaraniecki.wsb@gmail.com",
+        "firstName": "Krzysztof",
+        "lastName": "Baraniecki"
+    },
+    {
+        "user" : "Nati",
+        "password" : "98765",
+        "email": "natalia@gmail.com",
+        "firstName": "Natalia",
+        "lastName": ""
+    }
+]

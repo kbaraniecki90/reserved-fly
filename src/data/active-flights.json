@@ -1,0 +1,47 @@
+[
+    {
+        "name": "KB1903",
+        "outlet-city": "MX",
+        "outlet-time": "20.12.2019 20:30",
+        "flight-time": "14h 32min",
+        "arrival-city": "NZ",
+        "arrival-time": "21.12.2019 11:02",
+        "type-plane": "Boeing737"
+    },
+    {
+        "name": "MB1301",
+        "outlet-city": "WAW",
+        "outlet-time": "18.01.2020 07:21",
+        "flight-time": "1h 34min",
+        "arrival-city": "LON",
+        "arrival-time": "18.01.2020 08:45",
+        "type-plane": "Embraer145"
+    },
+    {
+        "name": "starwars",
+        "outlet-city": "Corellia",
+        "outlet-time": "18.01.20234 08:30",
+        "flight-time": "10min",
+        "arrival-city": "Death Star",
+        "arrival-time": "18.01.20234 08:40",
+        "type-plane": "MillenniumFalcon"
+    },
+    {
+        "name": "MB1302",
+        "outlet-city": "LON",
+        "outlet-time": "18.01.2020 09:00",
+        "flight-time": "1h 34min",
+        "arrival-city": "WAW",
+        "arrival-time": "18.01.2020 07:36",
+        "type-plane": "Embraer145"
+    },
+    {
+        "name": "KB1904",
+        "outlet-city": "NZ",
+        "outlet-time": "21.12.2019 11:02",
+        "flight-time": "14h 32min",
+        "arrival-city": "MX",
+        "arrival-time": "22.12.2019 02:30",
+        "type-plane": "Boeing737"
+    }
+]
