@@ -34,7 +34,7 @@ export default function () {
                     switchSection('flightContainers', 'viewAirplaneReservation')
                 })
             });
-    }, 200);
+    }, 300);
 
     // Tworzenie widoku dla wybranego lotu
     function createViewFlight(getflight) {

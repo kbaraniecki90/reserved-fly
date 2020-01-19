@@ -48,7 +48,7 @@ export default function () {
                     getError("Wrong data")
                     displayErrors(errors)
                 }
-            }, 100);
+            }, 300);
 
         } else {
             displayErrors(errors)

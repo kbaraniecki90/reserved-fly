@@ -1,10 +1,15 @@
-#flightContainers{
-    margin-bottom: -#{$sp-element-bottom};
-}
-
 .box-flight{
     text-align: center;
     margin-bottom: $sp-element-bottom;
+    @media (max-width: $md){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    @media (max-width: $sm){
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
     &__body{
         background: rgba($primary, 0.75);
         color: white;

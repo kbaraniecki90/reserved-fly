@@ -1,11 +1,19 @@
 #planAirplane{
     margin-top: 100px;
     height: 600px;
-    overflow: hidden;
     position: relative;
     z-index: 1;
     margin-right: 15px;
     margin-left: 15px;
+    @media (max-width: $lg){
+        margin-top: 0;
+        height: 300px;
+        overflow-x: scroll;
+        width: 95vw;
+    }
+    @media (min-width: $lg) {
+        overflow: hidden;
+    }
 
     #imgAirplane, #mapAirplane{
         position: absolute;
@@ -57,6 +65,10 @@
         );
     top: 0;
     z-index: 2;
+    @media (max-width: $lg){
+        display: none;
+    }
+
     &--right{
         right: -15px;
         transform: rotate(180deg);
@@ -86,6 +98,14 @@
         border-radius: 50%;
         background: white;
         box-shadow: -12px 0px 20px -13px black;
+    }
+    @media (min-width: $md) and (max-width: $lg){
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    @media (max-width: $md){
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
 

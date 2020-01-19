@@ -57,19 +57,15 @@
         </div>
     </aside>
     <div id="infoLogout" class="d-none">
-        <h4>Ostrzeżenie</h4>
-        <p>Za <span id="infoTimeLogout">0</span>s. Wylogujesz się automatycznie. Nacisznij przycisk myszki aby anulować.</p>
+        <h4>Warning</h4>
+        <p>In <span id="infoTimeLogout">0</span>s. you will automatically log out.</p>
     </div>
     <script src="./dist/js/main.min.js"></script>
 </body>
 </html>
 
 <!-- 
-In progres
-
-4. Wybór opcji dodatkowych (bagaż, taryfa) 
 
 5.Podsumowanie zamówienia  
-
 
 -->

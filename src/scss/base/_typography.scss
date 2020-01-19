@@ -12,6 +12,9 @@ p,h1,h2,h3,h4,h5,h6, li{
 h1, .h1{
     font-size: 2.6rem;
     margin-bottom: 1.4rem;
+    @media (max-width: $md){
+        font-size: 2rem;
+    }
 }
 
 h2, .h2{
