@@ -8,11 +8,10 @@ export default function (flight) {
 
     //Wyliczanie wielkości dla miejsc w samolocie
     function sizeMapAirplane() {
-        mapAirplane.style.width = widthImgAirplane
-        mapAirplane.style.height = heightImgAirplane
+        mapAirplane.setAttribute('width', `${widthImgAirplane}px`)
+        mapAirplane.setAttribute('height', `${heightImgAirplane}px`)
     }
     sizeMapAirplane()
-
     //Pobieranie oraz utworzenie miejsc
     fetch('./src/data/sites-' + flight + '.json')
         .then(function (res){

@@ -41,4 +41,7 @@
         padding: 1rem;
         bottom: 0px;
     }
+    @media (max-height: 390px){
+        display: none;
+    }
 }

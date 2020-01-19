@@ -29,12 +29,12 @@ export default function () {
                     setTimeout(() => {
                         appReservedFly(this.id)
                         moveBox()
-                    }, 200);
+                    }, 400);
 
                     switchSection('flightContainers', 'viewAirplaneReservation')
                 })
             });
-    }, 300);
+    }, 500);
 
     // Tworzenie widoku dla wybranego lotu
     function createViewFlight(getflight) {
@@ -59,7 +59,7 @@ export default function () {
                             <span class="material-icons">flight_land</span>Arrival: ${el['arrival-time']}</p>
                         </header>
                         <hr>
-                        <form id="mainFormSummary" action="" method="get" class="">
+                        <form id="mainFormSummary" action="index.php/sum=321" method="get" class="">
                             <div class="form-head">
                                 <h2>Selected places:</h2>
                             </div>
@@ -69,10 +69,10 @@ export default function () {
                             <div class="form-footer">
                                 <p>Sum: <strong><span id="sum">0</span> EUR</strong></p>
                             </div>
-                        </form>
-                        <!-- <div class="text-right">
-                            <input type="submit"  value="Book a flight">
-                        </div> -->
+                            </form>
+                            <div class="text-right">
+                                <input type="submit" value="Book a flight">
+                            </div> 
                     </div>
                 </aside>
                 `
