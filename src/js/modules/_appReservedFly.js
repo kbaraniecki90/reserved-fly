@@ -1,24 +1,26 @@
 export default function (flight) {
 
-    var mapAirplane = document.getElementById('mapAirplane'),
+    const mapAirplane = document.getElementById('mapAirplane'),
         imgAirplane = document.getElementById('imgAirplane'),
         widthImgAirplane = imgAirplane.width,
-        heightImgAirplane = imgAirplane.height,
-        positions = []
+        heightImgAirplane = imgAirplane.height
+    let positions = []
 
+    //Wyliczanie wielkości dla miejsc w samolocie
     function sizeMapAirplane() {
         mapAirplane.style.width = widthImgAirplane
         mapAirplane.style.height = heightImgAirplane
     }
     sizeMapAirplane()
 
+    //Pobieranie oraz utworzenie miejsc
     fetch('./src/data/sites-' + flight + '.json')
         .then(function (res){
         return res.json();
     })
     .then(function (element){
-        var lenght = element.length
-        var index = 0
+        const lenght = element.length
+        let index = 0
 
         element.forEach(function (e){
             var rect = document.createElementNS( "http://www.w3.org/2000/svg", 'rect')
@@ -36,8 +38,9 @@ export default function (flight) {
         });
     })
 
+    // Zaznaczenie pozycji + wprowadzenie do podsumowania
     function getAllPositions() {
-    var positions = document.querySelectorAll('rect')
+    const positions = document.querySelectorAll('rect')
     positions.forEach(e => {
         e.addEventListener("click", function () {
             if(e.classList.contains('position__available')){
@@ -48,26 +51,27 @@ export default function (flight) {
     });
     }
 
+    // Dodanie wybranego miejsca do wyników
     function addPositionForForm(element) {
-        var position = element.getAttribute("id")
-        var dataPosition = getDataPosition(position)
-
-        var formSummary = document.querySelector('#mainFormSummary .form-body')
+        const position = element.getAttribute("id"),
+            dataPosition = getDataPosition(position),
+            formSummary = document.querySelector('#mainFormSummary .form-body')
 
         if(!(formSummary.querySelector('[data-getPosition="' + dataPosition.name + '"]'))){
             const newChoice = document.createElement("div")
             newChoice.classList.add("getSelect")
             newChoice.setAttribute("data-getPosition", dataPosition.name);
             newChoice.innerHTML = `
+                <div class="rm-element material-icons" onclick="removePositionInForm(\'${dataPosition.name}\')">clear</div>
                 <label for="groupOfPassengers-select" class="p">Position <strong>${dataPosition.name}</strong><br>
-                    Price: </label>
+                Price: </label>
                 <select name="groupOfPassengers" id="groupOfPassengers-select-${dataPosition.name}">
                     <option data-price="${toNumbersPrice(dataPosition.price)}" value="adult">Adult ${toNumbersPrice(dataPosition.price)} EUR (100%)</option>
                     <option data-price="${toNumbersPrice(discount(dataPosition.price, 0.8))}" value="pensioner">Pensioner ${toNumbersPrice(discount(dataPosition.price, 0.8))} EUR (80%)</option>
                     <option data-price="${toNumbersPrice(discount(dataPosition.price, 0.6))}" value="student">Student ${toNumbersPrice(discount(dataPosition.price, 0.6))} EUR (60%)</option>
                     <option data-price="${toNumbersPrice(discount(dataPosition.price, 0.2))}" value="child">Child ${toNumbersPrice(discount(dataPosition.price, 0.2))} EUR (20%)</option>
                 </select>
-                <div class="rm-element material-icons" onclick="removePositionInForm(\'${dataPosition.name}\')">clear</div>
+                <p><input name="groupOfPassengersSuitcase" data-price="25" type="checkbox"> Add luggage (max 10 kg.) +25 EUR</p>
             `;
             formSummary.appendChild(newChoice)
             sumPrice()
@@ -76,13 +80,13 @@ export default function (flight) {
         }
     }
 
-    document.addEventListener('input', function (event) {
-        if(event.target.name == "groupOfPassengers"){
-            sumPrice()
-        }
+    // Śledzenie zmian w wyliczeniu
+    document.addEventListener('input', function () {
+        sumPrice()
     })
 
-    function removePositionInForm(element) {
+    // Usuniecie pozycji wybranej.
+    window.removePositionInForm = function(element) {
         document.querySelector('[data-getPosition="' + element + '"]').remove()
         document.getElementById(element).classList.remove("active")
         sumPrice()
@@ -90,7 +94,7 @@ export default function (flight) {
     }
 
     function getDataPosition(position) {
-        var element = false
+        let element = false
         positions.forEach(e => {
             if(e.name == position){
                 element = e
@@ -99,9 +103,10 @@ export default function (flight) {
         return element
     }
 
+    //podliczenie wartości
     function sumPrice() {
-        var prices = document.querySelectorAll('#mainFormSummary option:checked')
-        var sum = 0
+        const prices = document.querySelectorAll('#mainFormSummary option:checked, #mainFormSummary input[type="checkbox"]:checked')
+        let sum = 0
         prices.forEach(price => {
             sum +=  Number(price.dataset.price)
         });

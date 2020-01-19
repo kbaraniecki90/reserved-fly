@@ -1,10 +1,4 @@
-#login{
-    form{
-        display: flex;
-        flex-direction: column;
-    }
-}
-#formLogin{
+#formLogin, #infoLogout{
     position: fixed;
     left: 50%;
     top: 50%;
@@ -13,7 +7,7 @@
     background: white;
     padding: 30px;
     text-align: center;
-    box-shadow: -3px 7px 17px 1px rgba(black, .62);
+    @include box-shadow();
 }
 
 .coverSitpage{
@@ -25,4 +19,15 @@
     z-index: 998;
     background: white;
     opacity: .6;
+}
+
+// Inormation developer
+#devInfo{
+    background-color: #ffffb6;
+    padding: 2rem;
+    position: fixed;
+    z-index: 999;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    @include box-shadow();
 }

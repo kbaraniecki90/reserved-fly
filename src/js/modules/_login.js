@@ -1,36 +1,33 @@
 export default function () {
-    var login = document.getElementById('login')
-    var btnLogin = login.querySelector('button')
-    var inputsLogin = login.querySelectorAll('input')
-    var errors = []
-    var messageError = document.querySelector('.messageError')
-    var loginData = {};
+    const login = document.getElementById('login'),
+        btnLogin = login.querySelector('button'),
+        inputsLogin = login.querySelectorAll('input')
+    let loginData = {};
 
     blockWindow()
 
+    // Sprawdzenie poprawności logowania
     btnLogin.addEventListener("click", function (e) {
         e.preventDefault()
-        var flagValid = false;
+        let flagValid = false;
         errors.length = 0
 
         inputsLogin.forEach(function (e){
-            if(e.required){ //<< mozemy sie tego pozbyc
-                if(isEmpty(e)){
-                    flagValid = true
-                    if(flagValid){
-                        (isLength(e, 5)) ?
+            if(isEmpty(e)){
+                flagValid = true
+                if(flagValid){
+                    (isLength(e, 5)) ?
+                    flagValid = true :
+                    getError("Field " + e.name + " too short")
+                    if(e.type === 'email'){
+                        (isEmail(e)) ?
                         flagValid = true :
-                        getError("Pole " + e.name + " jest za krutkie")
-                        if(e.type === 'email'){
-                            (isEmail(e)) ?
-                            flagValid = true :
-                            getError("Zły formaty email")
-                        }
-                        loginData[e.name] = e.value
+                        getError("Bad email format")
                     }
-                } else {
-                    getError("Pole " + e.name + " jest pusty")
+                    loginData[e.name] = e.value
                 }
+            } else {
+                getError("Field " + e.name + " it's empty")
             }
         })
         if(flagValid && !(errors.length > 0)){
@@ -40,12 +37,15 @@ export default function () {
 
             setTimeout(() => {
                 if(window.logged){
+                    displayErrors(errors)
+                    document.querySelector('#login input[type="password"').value = ''
                     login.classList.add('d-none')
+                    hellouser(logged.firstName, logged.lastName)
                     rmBlockWindow();
                     timeAutoLogout()
                 }
                 else{
-                    getError("złe dane")
+                    getError("Wrong data")
                     displayErrors(errors)
                 }
             }, 100);
@@ -53,48 +53,9 @@ export default function () {
         } else {
             displayErrors(errors)
         }
-
     })
 
-    ///#### sprawdazanie parametrow
-
-    function isEmpty(field) {
-        return field.value !== ""
-    }
-
-    function isLength(field, min) {
-        return !(field.value.length < min);
-    }
-
-    function isEmail(field) {
-        return field.value.indexOf("@") !== -1
-    }
-
-    function getError(comment) {
-        errors.push(comment)
-    }
-
-    // wypisanie bledow
-
-    function  displayErrors(errors) {
-        var ul = document.querySelector("ul.errors")
-
-        if(!ul){
-            ul = document.createElement("ul")
-            ul.classList.add("errors")
-        }
-        ul.innerHTML = ""
-
-        errors.forEach(error => {
-            var li = document.createElement("li");
-            li.textContent = error
-            ul.appendChild(li)
-        })
-        messageError.appendChild(ul)
-    }
-
-
-    //#### sprawdzanie czy jest user
+    //Sprawdzanie, czy jest user
     function searchUser(email, password) {
         if(!window.logged){
             window.logged = false;
@@ -105,7 +66,7 @@ export default function () {
             json.forEach(user => {
                 if((user.email === email) && (user.password === password)){
 
-                    // user istnieje z haslem. Zapisanie danych
+                    // User istnieje z hasłem. Zapisanie danych
                     logged = {
                         "user": user.user,
                         "email": user.email,
@@ -120,11 +81,10 @@ export default function () {
         .catch(error => console.log("ERROR: ", error));
     }
 
-
-
+    // Natychmiastowe wylogowanie
     document.getElementById('btnLogout').addEventListener("click", logout);
 
-    // wylogowanie
+    // Wylogowanie
     function logout() {
         logged = false;
         session = false;
@@ -132,25 +92,39 @@ export default function () {
         login.classList.remove('d-none')
     }
 
-    // czas wyogowania automatycznego
-
-    var session = false;
+    // Automatyczne wylogowanie
     window.timeLogin = null
+    let session = false;
+    const infoLogout = document.getElementById('infoLogout')
+    const infoTimeLogout = document.getElementById('infoTimeLogout')
 
     function timeAutoLogout() {
-        var timeSession = 60 * 3;
+        let timeSession = 30 * 3;
         session = true
         clearInterval(timeLogin);
 
+        if(timeSession > 30){
+            infoLogout.classList.add('d-none')
+            rmBlockWindow()
+        }
+
         timeLogin = setInterval(function() {
             timeSession--;
+            infoTimeLogout.innerHTML = timeSession;
             if(timeSession <= 0){
                 clearInterval(timeLogin);
+                infoLogout.classList.add('d-none')
                 logout()
+            }
+        // Utworzenie ostrzeżenia przed wylogowaniem
+            if(timeSession === 30){
+                blockWindow()
+                infoLogout.classList.remove('d-none')
             }
         }, 1000);
     }
 
+    // Odświeżenie czasu - automatycznego wylogowania
     document.addEventListener("click",
         function () {
             if(session){
@@ -159,4 +133,47 @@ export default function () {
         }
     );
 
+}
+
+/// Sprawdzanie parametrów
+var errors = []
+var messageError = document.querySelector('.messageError')
+
+function isEmpty(field) {
+    return field.value !== ""
+}
+
+function isLength(field, min) {
+    return !(field.value.length < min);
+}
+
+function isEmail(field) {
+    return field.value.indexOf("@") !== -1
+}
+
+function getError(comment) {
+    errors.push(comment)
+}
+
+// Wypisanie błędów
+function  displayErrors(errors) {
+    var ul = document.querySelector("ul.errors")
+
+    if(!ul){
+        ul = document.createElement("ul")
+        ul.classList.add("errors")
+    }
+    ul.innerHTML = ""
+
+    errors.forEach(error => {
+        var li = document.createElement("li");
+        li.textContent = error
+        ul.appendChild(li)
+    })
+    messageError.appendChild(ul)
+}
+
+// Powitanie użytkownika
+function hellouser(firstName, lastName) {
+    document.getElementById('account-user').innerHTML = `${firstName} ${lastName}`
 }

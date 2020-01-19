@@ -3,7 +3,6 @@
 }
 
 .rm-element{
-    
     &:hover{
         cursor: pointer;
     }
@@ -11,6 +10,24 @@
 
 .h-100{
     height: 100%;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.d-flex{
+    display: flex;
+
+    &.flex-direction-column{
+        flex-direction: column;
+    }
+    &.justify-content-center{
+        justify-content: center;
+    }
+    &.align-items-center{
+        align-items: center;
+    }
 }
 
 .modal-open{
@@ -30,7 +47,7 @@
 .logo{
     font-size: 4rem;
     margin-right: 2rem;
-    color: #000091;
+    color: $primary;
 }
 
 #backSection{
@@ -42,6 +59,13 @@
     transition: .4s color ease-in-out;
     &:hover{
         cursor: pointer;
-        color: #000091;
+        color: $primary;
     }
+}
+
+.errors{
+    color: $danger;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
 }

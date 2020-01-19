@@ -4,6 +4,10 @@
 
 // ### colors
 $primary: #000091;
+$danger: #ff0000;
+
+// ### spacings
+$sp-element-bottom: 3rem;
 
 // ###############################
 // ##### Imports files scss ######
@@ -23,7 +27,9 @@ $primary: #000091;
 // #### Components ####
 @import
     "components/grid",
-    "components/_login";
+    "components/button",
+    "components/form",
+    "components/login";
 
 // #### Layout ####
 @import

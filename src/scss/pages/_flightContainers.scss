@@ -1,11 +1,16 @@
+#flightContainers{
+    margin-bottom: -#{$sp-element-bottom};
+}
+
 .box-flight{
     text-align: center;
+    margin-bottom: $sp-element-bottom;
     &__body{
         background: rgba($primary, 0.75);
         color: white;
-        margin-bottom: 3rem;
         padding: 4rem 2rem;
         transition: .6s all ease-in-out;
+        height: 100%;
         &:hover{
             background: rgba($primary, 1);
             cursor: pointer;

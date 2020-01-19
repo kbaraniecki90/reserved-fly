@@ -1,10 +1,6 @@
 #planAirplane{
     margin-top: 100px;
-    display: flex;
     height: 600px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -49,13 +45,11 @@
 
 //CORSOR MOVE
 .move{
-    display: flex;
-    align-items: center;
     width: 18%;
     height: 88%;
     position: absolute;
     color: rgba(black,.2);
-    transition: .6s all ease-in-out;
+    @include transition();
     background-image: linear-gradient(
         to right,
         white 10%,
@@ -64,7 +58,7 @@
     top: 0;
     z-index: 2;
     &--right{
-        right: 0;
+        right: -15px;
         transform: rotate(180deg);
     }
     &--left{
@@ -78,19 +72,8 @@
 
 // ASIDE
 #bookingCost{
-    border-width: 0;
-    border-left-width: 1px;
-    border-style: solid;
-    border-image: 
-      linear-gradient(
-        to bottom, 
-        rgba(0, 0, 0, 0),
-        #b3b3b3, 
-        rgba(0, 0, 0, 0)
-      ) 1;
     position: relative;
     z-index: 11;
-
     &::after{
         content: '';
         z-index: -1;
@@ -104,7 +87,6 @@
         background: white;
         box-shadow: -12px 0px 20px -13px black;
     }
-
 }
 
 .bookingCost{
@@ -112,17 +94,16 @@
         padding: 45px 15px;
         background: white;
         height: 100%;
-        
         hr {
             margin: 30px;
             border-width: 0;
             border-bottom-width: 1px;
             border-style: solid;
-            border-image: 
+            border-image:
               linear-gradient(
-                to right, 
+                to right,
                 rgba(0, 0, 0, 0),
-                #b3b3b3, 
+                #b3b3b3,
                 rgba(0, 0, 0, 0)
               ) 1;
         }

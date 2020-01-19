@@ -1,12 +1,10 @@
 import moveBox from './_moveBox'
 import appReservedFly from './_appReservedFly'
 export default function () {
-
-    // wydrukowanie lotow
+    // Wydrukowanie lotów
     let activeflights = []
     let BoxActiveFlights = document.getElementById('flightContainers')
 
-    // drukowanie lotow
     fetch('./src/data/active-flights.json')
         .then(response => response.json())
         .then(json => {
@@ -38,18 +36,18 @@ export default function () {
             });
     }, 200);
 
-    // tworzy widok lotu
-    function createViewFlight(JakiLOT) {
+    // Tworzenie widoku dla wybranego lotu
+    function createViewFlight(getflight) {
         activeflights.forEach(el => {
-            if(el.name === JakiLOT){
+            if(el.name === getflight){
                 document.getElementById('selectedFlight').innerHTML = `
                 <div class="p-relative col">
-                    <picture class="h-100" id="planAirplane">
+                    <picture class="h-100 d-flex align-items-center justify-content-center w-100" id="planAirplane">
                         <img src="images/${el['type-plane']}.jpg" id="imgAirplane" alt="${el['type-plane']}">
                         <svg id="mapAirplane"></svg>
                     </picture>
-                    <div class="move move--left material-icons" data-moveTarget="planAirplane" data-moveDirection="left">chevron_left</div>
-                    <div class="move move--right material-icons" data-moveTarget="planAirplane" data-moveDirection="right">chevron_left</div>
+                    <div class="d-flex align-items-center move move--left material-icons" data-moveTarget="planAirplane" data-moveDirection="left">chevron_left</div>
+                    <div class="d-flex align-items-center move move--right material-icons" data-moveTarget="planAirplane" data-moveDirection="right">chevron_left</div>
                 </div>
                 <aside class="col-3"  id="bookingCost">
                     <div class="bookingCost__content">
@@ -72,19 +70,17 @@ export default function () {
                                 <p>Sum: <strong><span id="sum">0</span> EUR</strong></p>
                             </div>
                         </form>
-                        <div class="text-right">
-                            <input type="submit" value="Book a flight">
-                        </div>
-
+                        <!-- <div class="text-right">
+                            <input type="submit"  value="Book a flight">
+                        </div> -->
                     </div>
                 </aside>
                 `
-                // odnalazlem lot i teraz stworze html
             }
         })
     }
 
-    // przelaczenie widoku
+    // Przełączenie widoku
     const backSection = document.getElementById('backSection')
     backSection.addEventListener('click', function() {
         switchSection('viewAirplaneReservation', 'flightContainers')

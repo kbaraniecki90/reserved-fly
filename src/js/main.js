@@ -1,6 +1,6 @@
 import login from './modules/_login'
 import flightSelection from './modules/_flightSelection'
-import appReservedFly from './modules/_appReservedFly'
+import effectPlaceholder from './modules/_effectPlaceholder'
 
 // #### Micro functions ####
 window.toNumbersPrice = function (price) {
@@ -30,8 +30,8 @@ window.switchSection = function (present, next) {
 
 document.addEventListener('DOMContentLoaded', function () {
     // ### Run modules ###
-    // login()
-    // blockWindow()
-
+    login()
+    effectPlaceholder()
+    blockWindow()
     flightSelection()
 })

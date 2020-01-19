@@ -1,0 +1,7 @@
+@mixin box-shadow() {
+    box-shadow: -3px 7px 17px 1px rgba(black, .62);
+}
+
+@mixin transition($value: .8s){
+    transition: $value all ease-in-out;
+}

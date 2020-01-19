@@ -10,12 +10,12 @@
 <body>
     <header id="header">
     <h1 class="text-uppercase"><span class="logo material-icons">flight</span>Book a flight</h1>
-    <div id="account"> <p>Hello, <span id="account-user">Krzystof Baraniecki</span>. <a href="#!" id="btnLogout">logout out</a></p></div>
+    <div id="account"> <p>Hello, <span id="account-user"></span>. <a href="#!" id="btnLogout">logout out</a></p></div>
     </header>
     <main class="container-fluid">
         <div id="flightContainers" class="row">
             <div class="col-12">
-                <h2>Wybór lotu</h2>
+                <h2 class="text-uppercase">Select flight</h2>
             </div>
         </div>
         <div id="viewAirplaneReservation" class="d-none">
@@ -24,45 +24,52 @@
             </div>
         </div>
     </main>
-    <footer id="footer">
+    <footer id="footer" class="d-flex flex-direction-column center justify-conte nt-center align-items-center">
         <h3 class="h1">Project author - Krzysztof Baraniecki</h3>
     </footer>
-    <!-- d-noen -->
-    <aside id="login" class="d-none"> 
+    <aside id="login"> 
         <div class="coverSitpage"></div>
         <div id="formLogin">
-            <h3 class="h1"><span class="logo material-icons">flight</span>Book a flight</h3>
+            <h3 class="h1 text-uppercase"><span class="logo material-icons">flight</span>Book a flight</h3>
             <div class="messageError"></div>
-            <form>
-                <p>
-                    <label>Email</label><br>
-                    <input type="email" name="email" required>
-                </p>
-                <p>
-                    <label>Password</label><br>
-                    <input type="password" name="password" required>
-                </p>
-                <p>
-                    <button>Login</button>
-                </p>
+            <form class="d-flex flex-direction-column">
+                <div class="input-effect">
+                    <input data-effect-placeholder type="email" name="email" required class="effect-placeholder">
+                    <label>Email</label>
+                    <span class="focus-border"></span>
+                </div>
+                <div class="input-effect">
+                    <input data-effect-placeholder type="password" name="password" autocomplete="on" required class="effect-placeholder">
+                    <label>Password</label>
+                    <span class="focus-border"></span>
+                </div>
+                <button class="btn btn-primary">Login</button>
             </form>
         </div>
+
+        <div id="devInfo">
+            <h4>Email and password:</h4>
+            <ul>
+                <li><strong>E: </strong>kowalski@gmail.com<strong> P: </strong>12345</li>
+                <li><strong>E: </strong>kbaraniecki.wsb@gmail.com<strong> P: </strong>54321</li>
+                <li><strong>E: </strong>natalia@gmail.com<strong> P: </strong>98765</li>
+            </ul>
+        </div>
     </aside>
+    <div id="infoLogout" class="d-none">
+        <h4>Ostrzeżenie</h4>
+        <p>Za <span id="infoTimeLogout">0</span>s. Wylogujesz się automatycznie. Nacisznij przycisk myszki aby anulować.</p>
+    </div>
     <script src="./dist/js/main.min.js"></script>
 </body>
 </html>
 
 <!-- 
 In progres
-1. Logowaniem 
-
-2. Wyborem daty/miejsca docelowego/liczby osób 
 
 4. Wybór opcji dodatkowych (bagaż, taryfa) 
 
 5.Podsumowanie zamówienia  
 
-End
-3. Wybór miejsca w samolocie 
 
 -->
