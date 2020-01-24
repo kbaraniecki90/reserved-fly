@@ -64,7 +64,7 @@ export default function () {
         .then(response => response.json())
         .then(json => {
             json.forEach(user => {
-                if((user.email === email) && (user.password === password)){
+                if((user.email === email.toLowerCase()) && (user.password === password)){
 
                     // User istnieje z hasłem. Zapisanie danych
                     logged = {
